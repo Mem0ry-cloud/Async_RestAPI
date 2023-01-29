@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async_Project", "Async_RestAPI\Async_Project.csproj", "{18049EDB-2F9F-454A-A475-88CB1E9ED46C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi_Comics", "RestApi_Comics\RestApi_Comics.csproj", "{CACF955C-467A-4D2F-852B-5253D416E5EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi_Library", "RestApi_Library\RestApi_Library.csproj", "{4582F721-A59E-456A-ADE6-D50528B844BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{18049EDB-2F9F-454A-A475-88CB1E9ED46C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18049EDB-2F9F-454A-A475-88CB1E9ED46C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18049EDB-2F9F-454A-A475-88CB1E9ED46C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CACF955C-467A-4D2F-852B-5253D416E5EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACF955C-467A-4D2F-852B-5253D416E5EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACF955C-467A-4D2F-852B-5253D416E5EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CACF955C-467A-4D2F-852B-5253D416E5EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4582F721-A59E-456A-ADE6-D50528B844BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4582F721-A59E-456A-ADE6-D50528B844BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4582F721-A59E-456A-ADE6-D50528B844BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4582F721-A59E-456A-ADE6-D50528B844BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
