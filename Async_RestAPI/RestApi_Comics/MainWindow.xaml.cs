@@ -12,17 +12,80 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RestApi_Library;
 
 namespace RestApi_Comics
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        int maxNum = 1;
+        int currentNum = 0;
         public MainWindow()
         {
             InitializeComponent();
+            btnNext.IsEnabled = false;
+            ApiHelper.Init();
+        }
+        private async Task LoadImage(int num = 0)
+        {
+            var comic = await WorkingProcess.Load(num);
+            currentNum = comic.Num;
+            if (num == 0)
+            {
+                maxNum = comic.Num;
+            }
+            textNumber.Text = $"Comix n{comic.Num}";
+            textTitle.Text = $"{comic.Title}";
+            textDate.Text = $"made in {comic.Day}.{comic.Month}.{comic.Year}";
+            imageComic.Source = new BitmapImage(new Uri(comic.Img));
+        }
+        private async void btnPrev_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentNum > 1)
+            {
+                currentNum--;
+                btnNext.IsEnabled = true;
+                await LoadImage(currentNum);
+                if (currentNum == 1)
+                {
+                    btnPrev.IsEnabled = false;
+                }
+            }
+        }
+
+        private async void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentNum < maxNum)
+            {
+                currentNum++;
+                btnPrev.IsEnabled = true;
+                await LoadImage(currentNum);
+                if (currentNum == 1)
+                {
+                    btnNext.IsEnabled = false;
+                }
+            }
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            await LoadImage();
+        }
+
+        private async void btnRand_Click(object sender, RoutedEventArgs e)
+        {
+            currentNum = new Random().Next(1, maxNum);
+            btnPrev.IsEnabled = true;
+            btnNext.IsEnabled = true;
+            if (currentNum == 1)
+            {
+                btnPrev.IsEnabled = false;
+            }
+            if (currentNum == maxNum)
+            {
+                btnNext.IsEnabled = false;
+            }
+            await LoadImage(currentNum);
         }
     }
 }

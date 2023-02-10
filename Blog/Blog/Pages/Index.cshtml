@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    List<string> data = new List<string>()
+    {
+        "1", "2"
+    };
+}
+
+<div class="container">
+</div>
+<div>
+    <h1>Blogs</h1>
+    <button class="btn filter-button" data-filter="all">All</button>
+    <div>
+        @foreach (var prod in data)
+        {
+            <h1>_prod</h1>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.filter-button').click(function () {
+                var value = $(this).attr('data-filter');
+
+                if (value == "all") {
+                    $('.filter').show('1000');
+                }
+                else {
+                    $('.filter').not('.' + value).hide('1000');
+                    $('.filter').filter('.' + value).show('1000');
+                }
+            });
+        });
+
+    </script>
+}

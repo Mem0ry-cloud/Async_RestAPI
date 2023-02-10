@@ -49,7 +49,9 @@
   <ItemGroup>
     <Compile Include="ApiHelper.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Models\Comic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkingProcess.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
